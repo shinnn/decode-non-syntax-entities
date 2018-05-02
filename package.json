@@ -1,0 +1,44 @@
+{
+	"name": "decode-non-syntax-entities",
+	"version": "1.0.0",
+	"description": "Decode character escapes except for HTML syntax characters",
+	"repository": "shinnn/decode-non-syntax-entities",
+	"author": "Shinnosuke Watanabe (https://github.com/shinnn)",
+	"scripts": {
+		"prebuild": "eslint --fix --format=codeframe index.mjs test.js",
+		"build": "rollup --config=node:module",
+		"pretest": "npm run-script build",
+		"test": "nyc --reporter=html --reporter=text node test.js"
+	},
+	"license": "ISC",
+	"files": [
+		"index.js",
+		"index.mjs"
+	],
+	"module": "index.mjs",
+	"keywords": [
+		"decode",
+		"unescape",
+		"syntax",
+		"htm",
+		"html",
+		"entity",
+		"entities",
+		"safe"
+	],
+	"dependencies": {
+		"append-type": "^1.0.1",
+		"he": "^1.1.1"
+	},
+	"devDependencies": {
+		"@shinnn/eslint-config": "^5.4.0",
+		"eslint": "^4.19.1",
+		"nyc": "^11.7.0",
+		"rollup": "^0.58.0",
+		"rollup-config-module": "^2.0.0",
+		"tape": "^4.9.0"
+	},
+	"eslintConfig": {
+		"extends": "@shinnn"
+	}
+}
